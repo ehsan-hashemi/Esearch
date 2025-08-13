@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ثبت سفارش برنامه فروشگاهی Enter Code</title>
+  <style>
+    .container {
+  max-width: 480px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+.container h2 {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.form-item {
+  margin-bottom: 1.2rem;
+}
+
+.form-item label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.form-item input[type="url"] {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-item input[type="url"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.15);
+}
+
+.btn {
+  width: 100%;
+  background: #007bff;
+  color: #fff;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+.success-message {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #28a745;
+}
+
+.error-message {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #dc3545;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>ثبت سفارش برنامه فروشگاهی Enter Code</h2>
+    <form class="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSd5TNlEYlQvlo-slITZVxBFxRsX8Z2rjmnge6IJbsGZ88lc6A/viewform?usp=header" method="POST">
+      <div class="form-item">
+        <label>URL سایت را وارد کنید. <span style="color: red;">*</span></label>
+        <input type="text" name="entry.1761367759" required>
+      </div>
+
+      <div class="form-item">
+        <button type="submit" class="btn">ارسال سفارش</button>
+      </div>
+
+      <div id="message"></div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.querySelector('.contact-form');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+      }).then(() => {
+        message.innerHTML = '<div class="success-message">سایت شما با موفقیت ثبت شد و به زودی در سایت قرار میگیرد.</div>';
+        form.reset();
+      }).catch(() => {
+        message.innerHTML = '<div class="error-message">خطا در ارسال. لطفاً دوباره تلاش کنید.</div>';
+      });
+    });
+  </script>
+</body>
+</html>

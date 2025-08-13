@@ -3,32 +3,130 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>جستجو</title>
+  <title>Esearch | جستجو</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="home">
-  <header></header>
+  <header class="topbar">
+    <div class="topbar-left">
+      <a class="link" href="history.html">سوابق</a>
+    </div>
+    <div class="topbar-right">
+      <button id="addSiteBtn" class="link-btn">افزودن سایت</button>
+    </div>
+  </header>
 
   <main class="home-main">
-    <h1 class="logo" aria-label="لوگوی موتور جستجو">
-      <span class="logo-part a">S</span><span class="logo-part b">e</span><span class="logo-part c">a</span><span class="logo-part d">r</span><span class="logo-part e">c</span><span class="logo-part f">h</span>
+    <h1 style="font-family:system-ui, -apple-system, Segoe UI, Roboto, 'Vazirmatn', 'IRANSans', Arial, sans-serif;" class="logo" aria-label="لوگو">
+      <span class="logo-part a">E</span><span class="logo-part b">s</span><span class="logo-part c">e</span><span class="logo-part d">a</span><span class="logo-part e">r</span><span class="logo-part f">c</span><span class="logo-part a">h</span>
     </h1>
 
-    <form class="search-form" action="results.html" method="get" role="search" aria-label="جستجو">
+    <!-- فرم جستجو -->
+    <form id="homeForm" class="search-form" action="results.html" method="get" role="search" aria-label="جستجو">
       <div class="search-box">
-        <button class="icon-btn" type="button" aria-label="جستجو" title="جستجو">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79L20 21.5 21.5 20 15.5 14zM10 14.5A4.5 4.5 0 1114.5 10 4.505 4.505 0 0110 14.5z"></path></svg>
+        <button class="icon-btn" type="submit" aria-label="جستجو" title="جستجو">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 
+                     6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79
+                     L20 21.5 21.5 20 15.5 14zM10 14.5A4.5 4.5 0 1114.5 10 
+                     4.505 4.505 0 0110 14.5z">
+            </path>
+          </svg>
         </button>
-        <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="جستجو..." aria-label="کلمه یا عبارت مورد جستجو">
-        <button class="kbd-btn" type="submit">جستجو</button>
-        <button class="kbd-btn secondary" type="submit" name="lucky" value="1">بزن بریم</button>
+        <input id="q" name="q" type="search" autocomplete="off" spellcheck="false"
+               placeholder="جستجو..." aria-label="کلمه یا عبارت مورد جستجو">
       </div>
     </form>
-
-    <p class="hint">همه‌چیز اینجا روی مرورگر شما اجرا می‌شود. بدون سرور، بدون هزینه.</p>
   </main>
 
-  <script src="assets/utils.js" defer></script>
-  <script src="assets/home.js" defer></script>
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="#">درباره ما</a>
+      <span class="sep">•</span>
+      <a href="#">قوانین</a>
+      <span class="sep">•</span>
+      <a href="#">ارتباط با ما</a>
+    </nav>
+  </footer>
+
+<!-- Modal افزودن سایت -->
+<dialog id="addSiteDialog" class="modal">
+  <form id="addSiteForm" class="modal-card">
+    <h3 class="modal-title">افزودن سایت</h3>
+
+    <label class="field">
+      <span>آدرس سایت (URL)</span>
+      <input id="siteUrl"
+             name="entry.965609169"
+             type="url"
+             required
+             dir="ltr"
+             inputmode="url"
+             autocomplete="url"
+             placeholder="https://example.com">
+      <small class="help">آدرس کامل سایت را وارد کنید.</small>
+    </label>
+
+    <div class="modal-actions">
+      <button type="submit" class="kbd-btn">ارسال</button>
+      <button type="button" class="kbd-btn secondary" id="closeAddSite">انصراف</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- پیام تایید -->
+<div id="successMessage" class="success-msg" style="display:none;">
+  ✅ سایت با موفقیت ثبت شد
+</div>
+
+<style>
+.success-msg {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: #4caf50;
+  color: #fff;
+  padding: .7rem 1rem;
+  border-radius: .5rem;
+  font-size: .9rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+</style>
+
+<script>
+const dialog = document.getElementById('addSiteDialog');
+const openBtn = document.getElementById('addSiteBtn');
+const closeBtn = document.getElementById('closeAddSite');
+const form = document.getElementById('addSiteForm');
+const input = document.getElementById('siteUrl');
+const successMsg = document.getElementById('successMessage');
+
+openBtn?.addEventListener('click', () => dialog?.showModal());
+closeBtn?.addEventListener('click', () => dialog?.close());
+
+form?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  let val = input.value.trim();
+  if (val && !/^https?:\/\//i.test(val)) {
+    val = 'https://' + val;
+  }
+
+  const formData = new FormData();
+  formData.append('entry.965609169', val);
+
+  try {
+    await fetch(
+      'https://docs.google.com/forms/d/e/1FAIpQLSd5TNlEYlQvlo-slITZVxBFxRsX8Z2rjmnge6IJbsGZ88lc6A/formResponse',
+      { method: 'POST', mode: 'no-cors', body: formData }
+    );
+    dialog.close();
+    successMsg.style.display = 'block';
+    setTimeout(() => successMsg.style.display = 'none', 3000);
+    form.reset();
+  } catch(err) {
+    alert('مشکلی در ثبت فرم پیش آمد.');
+  }
+});
+</script>
 </body>
 </html>

@@ -1,34 +1,54 @@
 [
   {
-    "title": "مستندات پروژه شما",
-    "url": "https://example.com/docs",
-    "description": "راهنمای شروع، نصب، و استفاده از پروژه. شامل مثال‌های کاربردی و نکات مهم.",
-    "tags": ["مستندات", "راهنما", "شروع سریع"],
-    "keywords": ["شروع", "نصب", "آموزش", "documentation", "guide"],
+    "type": "organization", 
+    "name": "گروه برنامه نویسی احسان",
+    "description": "گروه طراحی و توسعه نرم‌افزار با تجربه در پروژه‌های وب و موبایل",
+    "url": "https://ehsan-hashemi.ir",
+    "address": "قم، قم",
+    "phone": "09143654519",
+    "email": "info@ehsan-hashemi.ir",
+    "hours": {
+      "sat-wed": "09:00-18:00",
+      "thu-fri": "closed"
+    }
+  },
+  {
+    "type": "store",
+    "title": "فروشگاه احسان",
+    "url": "https://ehsan-store.com",
+    "description": "فروش محصولات فرهنگی",
+    "address": "اصفهان، خیابان نمونه، پلاک ۵",
+    "phone": "+98-31-98765432",
+    "hours": {}
+  },
+  {
+    "type": "website",
+    "title": "هوش مصنوعی",
+    "url": "https://m-ai.ir/",
+    "description": "هوش مصنوعی",
+    "rank": 1
+  },
+  {
+    "type": "website",
+    "title": "گروه برنامه نویسی احسان",
+    "url": "https://ehsan-hashemi.ir/",
+    "description": "گروه برنماه نویسی احسان",
     "rank": 1
   },
   {
     "title": "وبلاگ فنی",
-    "url": "https://vcdplay.ir/",
+    "url": "https://example.com/blog/search-performance",
     "description": "بررسی تکنیک‌های بهبود کارایی جستجو در کلاینت، از نرمال‌سازی تا رتبه‌بندی.",
     "tags": ["جستجو", "کارایی"],
     "keywords": ["بهینه سازی", "رتبه بندی", "tokenize", "normalize", "farsi"],
     "rank": 2
   },
   {
-    "title": "صفحه نمونه محصول",
-    "url": "https://example.com/product/alpha",
-    "description": "محصول آلفا با ویژگی‌های کلیدی. مناسب تیم‌های کوچک و استارتاپ‌ها.",
-    "tags": ["محصول", "ویژگی"],
-    "keywords": ["alpha", "ویژه", "استارتاپ", "feature"],
-    "rank": 3
-  },
-  {
-    "title": "آموزش HTML و CSS",
-    "url": "https://example.com/learn/html-css",
-    "description": "مبانی طراحی وب: ساختاردهی با HTML و استایل‌دهی با CSS به زبان ساده.",
-    "tags": ["آموزش", "HTML", "CSS"],
-    "keywords": ["طراحی وب", "front-end", "استایل", "layout"],
-    "rank": 4
+    "title": "وبلاگ فنی",
+    "url": "https://example.com/blog/search-performance",
+    "description": "بررسی تکنیک‌های بهبود کارایی جستجو در کلاینت، از نرمال‌سازی تا رتبه‌بندی.",
+    "tags": ["جستجو", "کارایی"],
+    "keywords": ["بهینه سازی", "رتبه بندی", "tokenize", "normalize", "farsi"],
+    "rank": 2
   }
 ]

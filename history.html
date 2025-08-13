@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Esearch | سوابق</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="history">
+  <header class="topbar">
+    <div class="topbar-left">
+      <a class="link" href="index.html">بازگشت</a>
+    </div>
+    <div class="topbar-right"></div>
+  </header>
+
+  <main class="history-main">
+    <h2>سوابق</h2>
+
+    <section class="history-section">
+      <div class="section-head">
+        <h3>جستجوها</h3>
+        <div class="actions">
+          <button id="clearQueries" class="kbd-btn secondary">حذف همه جستجوها</button>
+        </div>
+      </div>
+      <ul id="queryList" class="list"></ul>
+    </section>
+
+    <section class="history-section">
+      <div class="section-head">
+        <h3>بازدیدها</h3>
+        <div class="actions">
+          <button id="clearVisits" class="kbd-btn secondary">حذف همه بازدیدها</button>
+        </div>
+      </div>
+      <ul id="visitList" class="list"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="#">درباره ما</a>
+      <span class="sep">•</span>
+      <a href="#">قوانین</a>
+      <span class="sep">•</span>
+      <a href="#">ارتباط با ما</a>
+    </nav>
+  </footer>
+
+  <script type="module" src="assets/history.js"></script>
+</body>
+</html>
