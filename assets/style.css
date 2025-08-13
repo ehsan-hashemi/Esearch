@@ -1,0 +1,98 @@
+:root{
+  --bg:#fff;
+  --fg:#1f1f1f;
+  --muted:#5f6368;
+  --link:#1a0dab;
+  --link-visited:#660099;
+  --chip:#f1f3f4;
+  --border:#dadce0;
+  --shadow:0 1px 6px rgba(32,33,36,.28);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, "Vazirmatn", "IRANSans", Arial, sans-serif;
+  background:var(--bg); color:var(--fg);
+}
+
+a{color:var(--link); text-decoration:none}
+a:visited{color:var(--link-visited)}
+a:hover{text-decoration:underline}
+
+.home-main{
+  min-height:100vh;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:24px; padding:24px;
+}
+
+.logo{
+  font-size:64px; letter-spacing:2px; margin:0; font-weight:800; user-select:none
+}
+.logo-part.a{color:#4285f4}
+.logo-part.b{color:#ea4335}
+.logo-part.c{color:#fbbc05}
+.logo-part.d{color:#4285f4}
+.logo-part.e{color:#34a853}
+.logo-part.f{color:#ea4335}
+
+.search-form{width:min(680px, 92vw)}
+.search-form.header{width:min(680px, 80vw)}
+
+.search-box{
+  display:flex; align-items:center; gap:8px;
+  background:#fff; border:1px solid var(--border); border-radius:24px;
+  padding:8px 12px; box-shadow:none; transition:box-shadow .15s, border-color .15s;
+}
+.search-box:focus-within{box-shadow:var(--shadow); border-color:#e0e0e0}
+
+.search-box input{
+  flex:1; border:none; outline:none; font-size:16px; background:transparent; color:inherit;
+  padding:6px 8px;
+}
+.icon-btn{
+  border:none; background:transparent; padding:4px; display:grid; place-items:center; cursor:pointer;
+}
+.icon-btn svg{width:20px; height:20px; fill:var(--muted)}
+
+.kbd-btn{
+  border:1px solid transparent; background:#f8f9fa; color:#202124;
+  padding:8px 14px; border-radius:6px; cursor:pointer; font-size:14px;
+}
+.kbd-btn:hover{border-color:var(--border)}
+.kbd-btn.secondary{background:#f1f3f4}
+
+.hint{color:var(--muted); font-size:13px}
+
+.results-header{
+  display:flex; align-items:center; gap:16px; padding:12px 16px; border-bottom:1px solid var(--border);
+}
+.logo-small{
+  display:inline-grid; place-items:center; width:36px; height:36px; border-radius:50%;
+  background:#e8f0fe; color:#1967d2; font-weight:800; font-size:20px; text-decoration:none;
+}
+
+.results-main{max-width:680px; margin:18px auto; padding:0 16px}
+.meta{color:var(--muted); font-size:12px; margin-bottom:16px}
+
+.results-list{display:flex; flex-direction:column; gap:22px}
+.result{
+  display:flex; flex-direction:column; gap:6px;
+}
+.result .crumb{
+  color:#006621; font-size:12px; direction:ltr; unicode-bidi:plaintext; /* URL ها چپ به راست */
+}
+.result h3{
+  font-size:18px; font-weight:400; margin:0;
+}
+.result p{
+  margin:0; color:#4d5156; font-size:14px; line-height:1.58;
+}
+mark{background:transparent; color:#d93025; font-weight:600}
+
+/* ریسپانسیو */
+@media (max-width:560px){
+  .logo{font-size:48px}
+  .search-box{padding:6px 10px}
+}

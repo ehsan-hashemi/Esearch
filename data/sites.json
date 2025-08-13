@@ -1,0 +1,34 @@
+[
+  {
+    "title": "مستندات پروژه شما",
+    "url": "https://example.com/docs",
+    "description": "راهنمای شروع، نصب، و استفاده از پروژه. شامل مثال‌های کاربردی و نکات مهم.",
+    "tags": ["مستندات", "راهنما", "شروع سریع"],
+    "keywords": ["شروع", "نصب", "آموزش", "documentation", "guide"],
+    "rank": 1
+  },
+  {
+    "title": "وبلاگ فنی",
+    "url": "https://vcdplay.ir/",
+    "description": "بررسی تکنیک‌های بهبود کارایی جستجو در کلاینت، از نرمال‌سازی تا رتبه‌بندی.",
+    "tags": ["جستجو", "کارایی"],
+    "keywords": ["بهینه سازی", "رتبه بندی", "tokenize", "normalize", "farsi"],
+    "rank": 2
+  },
+  {
+    "title": "صفحه نمونه محصول",
+    "url": "https://example.com/product/alpha",
+    "description": "محصول آلفا با ویژگی‌های کلیدی. مناسب تیم‌های کوچک و استارتاپ‌ها.",
+    "tags": ["محصول", "ویژگی"],
+    "keywords": ["alpha", "ویژه", "استارتاپ", "feature"],
+    "rank": 3
+  },
+  {
+    "title": "آموزش HTML و CSS",
+    "url": "https://example.com/learn/html-css",
+    "description": "مبانی طراحی وب: ساختاردهی با HTML و استایل‌دهی با CSS به زبان ساده.",
+    "tags": ["آموزش", "HTML", "CSS"],
+    "keywords": ["طراحی وب", "front-end", "استایل", "layout"],
+    "rank": 4
+  }
+]

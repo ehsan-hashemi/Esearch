@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>نتایج جستجو</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="results">
+  <header class="results-header">
+    <a class="logo-small" href="index.html" aria-label="صفحه اصلی">S</a>
+    <form class="search-form header" action="results.html" method="get" role="search" aria-label="جستجو">
+      <div class="search-box">
+        <button class="icon-btn" type="submit" aria-label="جستجو" title="جستجو">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79L20 21.5 21.5 20 15.5 14zM10 14.5A4.5 4.5 0 1114.5 10 4.505 4.505 0 0110 14.5z"></path></svg>
+        </button>
+        <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="جستجو...">
+        <button class="kbd-btn" type="submit">جستجو</button>
+      </div>
+    </form>
+  </header>
+
+  <main class="results-main">
+    <div class="meta" id="meta"></div>
+    <section id="results" class="results-list" aria-live="polite"></section>
+  </main>
+
+  <script src="assets/utils.js" defer></script>
+  <script src="assets/results.js" defer></script>
+</body>
+</html>
