@@ -6,6 +6,7 @@
 * {
   direction: rtl;
   font-family: "Vazir";
+  -webkit-tap-highlight-color: transparent;
 }
 
 :root{
