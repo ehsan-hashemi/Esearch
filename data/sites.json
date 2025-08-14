@@ -1,21 +1,28 @@
 [
   {
     "type": "organization", 
+    "name": "سید محمد احسان هاشمی",
+    "description": "برنامه نویس، طراح و مدیریت گروه برنامه نویسی احسان."
+  },
+  {
+    "type": "organization", 
+    "name": "MAi",
+    "description": "سایت صحبت رایگان و بدون نیاز به فیلترشکن با هوش مصنوعی های برتر جهان. ساخته شده توسط گروه برنامه نویسی احسان.",
+    "url": "https://m-ai.ir"
+  },
+  {
+    "type": "organization", 
     "name": "گروه برنامه نویسی احسان",
     "description": "گروه طراحی و توسعه نرم‌افزار با تجربه در پروژه‌های وب و موبایل",
     "url": "https://ehsan-hashemi.ir",
     "address": "قم، قم",
     "phone": "09143654519",
-    "email": "info@ehsan-hashemi.ir",
-    "hours": {
-      "sat-wed": "09:00-18:00",
-      "thu-fri": "closed"
-    }
+    "email": "info@ehsan-hashemi.ir"
   },
   {
     "type": "store",
     "title": "فروشگاه احسان",
-    "url": "https://ehsan-store.com",
+    "url": "https://ehsan-hashemi.ir/",
     "description": "فروش محصولات فرهنگی",
     "address": "اصفهان، خیابان نمونه، پلاک ۵",
     "phone": "+98-31-98765432",
@@ -25,13 +32,13 @@
     "type": "website",
     "title": "MAi",
     "url": "https://m-ai.ir/",
-    "description": "یک سایت برای چت با هوش مصنوعی های برتر جهان. تماماینها در MAi. ساخته شده توسط گروه برنامه نویسی احسان.",
+    "description": "وبسایت صحبت با هوش مصنوعی MAi. بدون نیاز به فیلترشکن صحبت با بهترین هوش مصنوعی های جهان"
   },
   {
     "type": "website",
     "title": "گروه برنامه نویسی احسان",
     "url": "https://ehsan-hashemi.ir/",
-    "description": "گروه برنماه نویسی احسان",
+    "description": "گروه برنامه نویسی احسان"
   },
   {
     "title": "وبلاگ فنی",

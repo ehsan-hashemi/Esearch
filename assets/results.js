@@ -213,6 +213,7 @@ function renderEntityCard(entity){
       ${entity.hours ? `<div class="entity-row ${status.open ? "open" : "closed"}"><span class="lbl">وضعیت:</span> <span>${status.text}</span></div>` : ""}
       ${hoursBlock}
     </div>
+    <br>
   `;
   top.appendChild(card);
 }
