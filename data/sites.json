@@ -26,7 +26,10 @@
     "description": "فروش محصولات فرهنگی",
     "address": "اصفهان، خیابان نمونه، پلاک ۵",
     "phone": "+98-31-98765432",
-    "hours": {}
+    "hours": {
+      "sat-wed": "09:00-18:00",
+      "thu-fri": "closed"
+    }
   },
   {
     "type": "website",

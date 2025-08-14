@@ -182,38 +182,37 @@ function computeOpenStatus(hours){
   return { open:false, text:"الان بسته است" };
 }
 const FA_DAYS = { sat:"شنبه", sun:"یکشنبه", mon:"دوشنبه", tue:"سه‌شنبه", wed:"چهارشنبه", thu:"پنجشنبه", fri:"جمعه" };
-function renderHoursTable(hours){
-  const hmap = expandHours(hours);
-  let rows = "";
-  for (const k of DAY_ORDER){
-    const spec = hmap[k];
-    if (spec == null) continue;
-    const txt = /^(closed|تعطیل|بسته)$/i.test(spec) ? "تعطیل" : spec;
-    rows += `<div class="entity-row"><span class="lbl">${FA_DAYS[k]}:</span> <span>${txt}</span></div>`;
-  }
-  return rows ? `<div class="entity-hours">${rows}</div>` : "";
-}
 function renderEntityCard(entity){
   const top = ensureTopCards();
   const card = document.createElement("div");
   card.className = "card entity-card";
   const status = computeOpenStatus(entity.hours || {});
   const safe = (s) => (s || "").toString();
-  const hoursBlock = entity.hours ? renderHoursTable(entity.hours) : "";
+
+  // تعیین فقط امروز
+  const todayKey = jsDayToKey(new Date().getDay());
+  const todayHoursMap = expandHours(entity.hours || {});
+  const todayHours = todayHoursMap[todayKey];
+  let hoursLine = "";
+  if (todayHours) {
+    if (/^(closed|تعطیل|بسته)$/i.test(todayHours)) {
+      hoursLine = `<div class="entity-row closed"><span class="lbl">وضعیت:</span> <span>تعطیل است</span></div>`;
+    } else {
+      hoursLine = `<div class="entity-row open"><span class="lbl">وضعیت:</span> <span>${todayHours}</span></div>`;
+    }
+  }
+
   card.innerHTML = `
     <div class="entity-header">
       <div class="entity-title">${safe(entity.title || entity.name || "")}</div>
-      ${entity.url ? `<a class="entity-site" href="${entity.url}" target="_blank" rel="noopener">وب‌سایت</a>` : ""}
+      ${entity.url ? `<a class="entity-site" href="${entity.url}" target="_blank">وب‌سایت</a>` : ""}
     </div>
     <div class="entity-desc">${safe(entity.description || entity.snippet || "")}</div>
     <div class="entity-meta">
-      ${entity.address ? `<div class="entity-row"><span class="lbl">آدرس:</span> <span>${safe(entity.address)}</span></div>` : ""}
+      ${entity.address ? `<div class="entity-row"><span class="lbl">آدرس:</span> ${safe(entity.address)}</div>` : ""}
       ${entity.phone ? `<div class="entity-row"><span class="lbl">تلفن:</span> <a href="tel:${safe(entity.phone)}">${safe(entity.phone)}</a></div>` : ""}
-      ${entity.email ? `<div class="entity-row"><span class="lbl">ایمیل:</span> <a href="tel:${safe(entity.email)}">${safe(entity.email)}</a></div>` : ""}
-      ${entity.hours ? `<div class="entity-row ${status.open ? "open" : "closed"}"><span class="lbl">وضعیت:</span> <span>${status.text}</span></div>` : ""}
-      ${hoursBlock}
+      ${hoursLine}
     </div>
-    <br>
   `;
   top.appendChild(card);
 }
